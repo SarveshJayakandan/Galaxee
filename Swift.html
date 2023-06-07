@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="GalaxeeLogo.png" type="image/x-icon">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;700&family=Montserrat:ital,wght@0,500;1,500;1,600&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+        .container{
+            width: 100%;
+            height: 100vh;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .calculator{
+            padding: 20px;
+            border-radius: 2px;
+            background: rgb(27, 52, 85);
+            margin-bottom: 20px;
+            border-radius: 10px;
+            margin-left: 100px;
+        }
+        @media(max-width: 955px){
+            .menu{
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;       
+             }
+            .hamburgertastytasty{
+                display: block;
+                margin-top: 30px;
+            }
+            .hamburgertastytasty .line{
+                display: block;
+            }
+        }
+        .calculator form input{
+            border: 0;
+            outline: 0;
+            background: transparent;
+            width: 60px;
+            height: 60px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            margin: 10px;
+            border-radius: 50px;
+        }
+        form .display{
+            margin: 20px 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+        form .display input{
+            flex: 1;
+            box-shadow: none;
+            text-align: right;
+            font-size: 45px;
+            margin-right: 10px;
+            border-radius: 1px;
+        }
+        .calculator form input:hover{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, #7F6FEA 0px 0px 0px 3px;
+            transition: .3s ease;
+        }
+       form input.equal{
+            width: 145px;
+            color: #7F6FEA;
+        }
+        form input.operator{
+            color: #7F6FEA;
+        }
+        .hamburgertastytasty:hover{
+            cursor: pointer;
+        }
+        .menu{
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 280px;
+  background: rgb(27, 52, 85);
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  display: block;
+}
+.menu header img{
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  line-height: 900px;
+  user-select: none;
+  background: rgb(27, 52, 85);
+  width: 280px;
+}
+.menu ul a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 78px;
+  font-size: 23px;
+  color: rgb(255, 255, 255);
+  padding-left: 50px;
+  box-sizing: border-box;
+  border-radius: 1px;
+}
+ul li:hover a{
+  background: rgb(255, 255, 255);
+  transition: .2s ease;
+  color: #7F6FEA;
+}
+.menu ul a i{
+  margin-right: 17px;
+}
+.hamburgertastytasty {
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  width: 30px;
+  height: 30px;
+}
+.hamburgertastytasty .line{
+                width: 29px;
+                height: 5px;
+                background-color: rgb(255, 255, 255);
+                margin-bottom: 5px;
+                border-radius: 50px;
+            }
+ </style>
+    <title>Swift</title>
+</head>
+<body>
+    
+    <div class="menu" id="sidebar">
+        <header><img src="SwiftStandardmodeLogo.png" alt="Swift" id="imghaha" onclick="clickimage()"></header>
+        <ul id="links">
+            <li><a href="updates.html"><i class="fa-solid fa-arrow-up"></i></i>Swift Updates</a></li>
+            <li><a href="#"><i class="fa-solid fa-microphone"></i>Voice Input</a></li>
+            <li><a href="#"><i class="fa-solid fa-camera-retro"></i>Image Input</a></li>
+            <li><a href="products.html"><i class="fa-solid fa-plus"></i>Explore More</a></li>
+        </ul>
+        <div class="hamburgertastytasty" onclick="shownavbarplease()">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </div>
+       </div>
+    <div class="container">
+      <div class="calculator">
+        <form>
+        <div class="display">
+            <input type="text" name="display">
+        </div>
+        <div>
+            <input type="button" value="AC" onclick="display.value = ''" class="operator">
+            <input type="button" value="Del" onclick="display.value = display.value.toString().slice(0, -1)" class="operator">
+            <input type="button" value="." onclick="display.value += '.'" class="operator">
+            <input type="button" value="/" onclick="display.value += '/'" class="operator">
+        </div>
+        <div>
+            <input type="button" value="7" onclick="display.value += '7'">
+            <input type="button" value="8" onclick="display.value += '8'">
+            <input type="button" value="9" onclick="display.value += '9'">
+            <input type="button" value="*" onclick="display.value += '*'" class="operator">
+        </div>
+        <div>
+            <input type="button" value="4" onclick="display.value += '4'">
+            <input type="button" value="5" onclick="display.value += '5'">
+            <input type="button" value="6" onclick="display.value += '6'">
+            <input type="button" value="-" onclick="display.value += '-'" class="operator">
+        </div>
+        <div>
+            <input type="button" value="1" onclick="display.value += '1'">
+            <input type="button" value="2" onclick="display.value += '2'">
+            <input type="button" value="3" onclick="display.value += '3'">
+            <input type="button" value="+" onclick="display.value += '+'" class="operator">
+        </div>
+        <div>
+            <input type="button" value="00" onclick="display.value += '00'">
+            <input type="button" value="0" onclick="display.value += '0'">
+            <input type="button" value="=" onclick="display.value = eval(display.value)" class="equal">
+        </div>
+    </form>
+      </div>
+    </div>
+    <script>
+   function shownavbarplease(){
+        const links = document.getElementById('sidebar');
+        if(links.style.transform === "translateX(-100%)"){
+            links.style.transform = "translateX(0)"
+            links.style.transition = '.5s ease'
+        } else{
+            links.style.transform = "translateX(-100%)"
+        }
+      }
+    </script>
+     <script src="https://kit.fontawesome.com/b6729b5f76.js" crossorigin="anonymous"></script>
+</body>
+</html>
